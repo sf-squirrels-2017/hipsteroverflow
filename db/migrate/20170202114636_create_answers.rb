@@ -6,5 +6,6 @@ class CreateAnswers < ActiveRecord::Migration
       t.references :question
 
       t.timestamps
+    end
   end
 end
