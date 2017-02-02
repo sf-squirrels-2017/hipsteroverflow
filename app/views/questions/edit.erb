@@ -1,0 +1,7 @@
+<form method="post" action="/questions/<%= @question.id %>">
+  <input type="hidden" name="_method" value="put">
+  Question: <input type="text" name="question[title]" />
+  Description: <textarea name="question[description]"></textarea>
+  <input type ='submit' value="Submit">
+
+</form>
