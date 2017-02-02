@@ -1,0 +1,9 @@
+<h3><%=@question.title%></h3>
+
+<p><%=@question.description%></p>
+
+<h4>Answers:</h4>
+
+<%@answers.each do |answer|%>
+<p><%=answer.description%></p>
+<%end%>
