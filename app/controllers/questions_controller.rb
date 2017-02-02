@@ -9,6 +9,7 @@ end
 
 post '/questions' do
   @question = Question.new(params[:question])
+  @user = User.find_by(params[:username])
   if @question.save
     redirect '/questions'
   else
@@ -18,11 +19,13 @@ end
 
 get '/questions/:id' do
   @question = Question.find(params[:id])
+  @answers = @question.answers
   erb :'questions/show'
 end
 
 get '/questions/:id/edit' do
   @question = Question.find(params[:id])
+
   erb :'questions/edit'
 end
 
