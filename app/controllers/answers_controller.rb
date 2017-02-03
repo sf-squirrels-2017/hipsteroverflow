@@ -10,11 +10,15 @@ post '/questions/:id/answers' do
   @question = Question.find(params[:id])
   @answer = @question.answers.new(params[:answer])
   # @question.answers.find(params[:id])
-
-  if @answer.save
-			redirect "/questions/#{@question.id}"
-		else
-      erb :"/answers/show"
+  if request.xhr?
+    erb :'answers/_new_answer', layout: false, locals:{
+      answer: @answer }
+  else
+    if @answer.save
+  			redirect "/questions/#{@question.id}"
+  		else
+        erb :"/answers/show"
+      end
     end
 end
 

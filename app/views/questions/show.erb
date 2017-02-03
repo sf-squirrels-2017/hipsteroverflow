@@ -6,9 +6,16 @@
   <input class="button" type="submit" value="Delete"/>
 </form>
 <h4>Answers:</h4>
-<form action="/questions/<%= @question.id %>/answers/new">
+<form id="new_answer_button" action="/questions/<%= @question.id %>/answers/new">
   <input type="submit" value="New Answer" />
 </form>
-<%@answers.each do |answer|%>
-<p><%=answer.description%></p>
-<%end%>
+
+<form id="new_answer_form"action="/questions/<%=@question.id %>/answers" method="post">
+  Answer: <input type='text' name="answer[description]" />
+  <input type='submit' value='submit'>
+</form>
+<div id="answer_container">
+  <%@answers.each do |answer|%>
+    <p><%=answer.description%></p>
+  <%end%>
+</div>

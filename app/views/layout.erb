@@ -25,7 +25,7 @@
     <li class="nav-li"><a class="nav-li"  href="/users/new">Sign Up</a></li>
     <li class="nav-li"><a class="nav-li"  href="/login">Log In</a></li>
   <% if current_user %>
-    <li id="new_form_button" class="nav-li"><a class="nav-li" href="/questions/new">Post a Question</a></li>
+    <li class="nav-li"><a id="new_form_button" class="nav-li" href="/questions/new">Post a Question</a></li>
     <form action="/logout" method="POST">
       <input type="hidden" name="_method" value="delete">
       <input class="logout" type="submit" value="Logout">
