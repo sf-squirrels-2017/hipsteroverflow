@@ -1,10 +1,12 @@
-<h1>this is the question index view</h1>
+<div class="pop">
+  <h1 class="title">the dream of the 90s is alive in Portland</h1>
 
-<!-- <ul id="question_container">
-  <%@questions.each do |question|%>
-    <li><a href='/questions/<%=question.id%>'><%=question.title%></a></li>
-  <% end %>
-</ul> -->
-<div id="question_container">
-  <%= erb :'questions/_questions',layout: false, locals: { questions: @questions } %>
+  <!-- <ul id="question_container">
+    <%@questions.each do |question|%>
+      <li><a href='/questions/<%=question.id%>'><%=question.title%></a></li>
+    <% end %>
+  </ul> -->
+  <div id="question_container">
+    <%= erb :'questions/_questions',layout: false, locals: { questions: @questions } %>
+  </div>
 </div>
