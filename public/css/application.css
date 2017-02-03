@@ -52,6 +52,10 @@ body {
 .h1 {
   font-family: 'Sansita', sans-serif;
 }
+.title {
+  text-align: center;
+}
+
 input[type=text], input[type=password], input[type=textarea], select {
     width: 100%;
     padding: 12px 20px;
@@ -90,4 +94,8 @@ input[type=submit]:hover {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+.question-index {
+
 }
