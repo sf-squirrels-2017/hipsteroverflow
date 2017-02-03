@@ -9,13 +9,19 @@ get '/questions/new' do
 end
 
 post '/questions' do
-  @question = Question.new(params[:question])
+  @questions = Question.all
+  @question = Question.create(params[:question])
   @user = User.find_by(params[:username])
-  if @question.save
-    redirect '/questions'
+  if request.xhr?
+    erb :'questions/_questions', layout: false, locals:{ questions: @questions }
   else
-    erb :'questions/new'
+    if @question.save
+      redirect '/questions'
+    else
+      erb :'questions/new'
+    end
   end
+
 end
 
 get '/questions/:id' do

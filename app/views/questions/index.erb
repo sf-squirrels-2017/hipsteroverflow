@@ -1,6 +1,10 @@
 <h1>this is the question index view</h1>
-<ul>
+
+<!-- <ul id="question_container">
   <%@questions.each do |question|%>
     <li><a href='/questions/<%=question.id%>'><%=question.title%></a></li>
   <% end %>
-</ul>
+</ul> -->
+<div id="question_container">
+  <%= erb :'questions/_questions',layout: false, locals: { questions: @questions } %>
+</div>
