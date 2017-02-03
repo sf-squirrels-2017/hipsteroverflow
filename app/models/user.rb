@@ -18,13 +18,7 @@ class User < ActiveRecord::Base
     errors.add(:password, "is required") if @raw_password.nil?
   end
 
-  def self.authenticate(email, password)
-    @user = User.find_by(email: email)
-    if @user && @user.hashed_password == password
-      @user
-    else
-      nil
-    end
+  def authenticate(check_password)
+    self.password == check_password
   end
-
 end
