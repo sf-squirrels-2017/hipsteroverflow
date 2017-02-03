@@ -23,8 +23,13 @@
     <li class="nav-li"><a href="/">Home</a></li>
     <li class="nav-li"><a href="/users/new">Sign Up</a></li>
     <li class="nav-li"><a href="/login">Log In</a></li>
+  <% if current_user %>
     <li class="nav-li"><a href="/questions/new">Post a Question</a></li>
-    <li class="nav-li"><a href="/logout">Log Out</a></li>
+    <form class="logoutForm" action="/logout" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <input class="logoutBtn" type="submit" value="logout">
+    </form>
+  <% end %>
   </ul>
 </nav>
   <%= yield %>
