@@ -3,10 +3,12 @@
 <p><%=@question.description%></p>
 <form method="post" action="/questions/<%=@question.id%>">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete"/>
+  <input class="button" type="submit" value="Delete"/>
 </form>
 <h4>Answers:</h4>
-
+<form action="/questions/<%= @question.id %>/answers/new">
+  <input type="submit" value="New Answer" />
+</form>
 <%@answers.each do |answer|%>
 <p><%=answer.description%></p>
 <%end%>
