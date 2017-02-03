@@ -26,3 +26,19 @@ img.banner {
 .nav-li:hover {
     background-color: #111;
 }
+.logout {
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+     color: white;
+     border:none;
+     font: inherit;
+     margin: 0;
+     display: block;
+     text-align: center;
+     padding: 27px;
+     float: left;
+}
+.logout:hover {
+    background-color: #111;
+}

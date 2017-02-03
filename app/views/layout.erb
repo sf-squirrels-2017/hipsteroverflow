@@ -25,15 +25,16 @@
     <li class="nav-li"><a class="nav-li"  href="/users/new">Sign Up</a></li>
     <li class="nav-li"><a class="nav-li"  href="/login">Log In</a></li>
   <% if current_user %>
-    <li id="new_form_button"class="nav-li"><a href="/questions/new">Post a Question</a></li>
-    <form class="logoutForm" action="/logout" method="POST">
+    <li id="new_form_button" class="nav-li"><a class="nav-li" href="/questions/new">Post a Question</a></li>
+    <form action="/logout" method="POST">
       <input type="hidden" name="_method" value="delete">
-      <input class="logoutBtn" type="submit" value="logout">
+      <input class="logout" type="submit" value="Logout">
     </form>
-    <div id="new_question_form"><%=erb :'questions/_new_question', layout: false%></div>
   <% end %>
   </ul>
 </nav>
+<br>
+<div id="new_question_form"><%=erb :'questions/_new_question', layout: false%></div>
   <%= yield %>
 </body>
 </html>
