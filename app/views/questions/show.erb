@@ -1,4 +1,4 @@
-<h3><%=@question.title%></h3>
+<h2><%=@question.title%></h2>
 <p>Votes: <%=@question.votes.count%></p>
 <p><%=@question.description%></p>
 <form method="post" action="/questions/<%=@question.id%>">
@@ -7,7 +7,7 @@
 </form>
 <h4>Answers:</h4>
 <form id="new_answer_button" action="/questions/<%= @question.id %>/answers/new">
-  <input type="submit" value="New Answer" />
+  <input class="button" type="submit" value="New Answer" />
 </form>
 
 <form id="new_answer_form"action="/questions/<%=@question.id %>/answers" method="post">
