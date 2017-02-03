@@ -18,11 +18,12 @@
   <title></title>
 </head>
 <body>
+  <img class="banner" src="images/portlandia-banner.png" alt="Smiley face" width="max-width" height="200">
   <nav class="nav-links">
   <ul class="nav-ul">
-    <li class="nav-li"><a href="/">Home</a></li>
-    <li class="nav-li"><a href="/users/new">Sign Up</a></li>
-    <li class="nav-li"><a href="/login">Log In</a></li>
+    <li class="nav-li"><a class="nav-li" href="/">Home</a></li>
+    <li class="nav-li"><a class="nav-li"  href="/users/new">Sign Up</a></li>
+    <li class="nav-li"><a class="nav-li"  href="/login">Log In</a></li>
   <% if current_user %>
     <li id="new_form_button"class="nav-li"><a href="/questions/new">Post a Question</a></li>
     <form class="logoutForm" action="/logout" method="POST">
