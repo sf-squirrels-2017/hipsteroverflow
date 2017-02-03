@@ -1,5 +1,6 @@
 get '/questions' do
   @questions = Question.all
+  @questions = @questions.sort_by{|question| question.votes.length}.reverse
   erb :'questions/index'
 end
 
