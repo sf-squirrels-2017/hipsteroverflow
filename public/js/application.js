@@ -59,6 +59,10 @@ var createNewAnswer = function(){
       data: newAnswer
     }).done(function(response){
       $('#answer_container').append(response);
-    })
+    });
   })
+  $('#new_answer_form').children( ':first').val('')
+
+  $('#new_answer_button').show();
+  $('#new_answer_form').hide();
 }
