@@ -2,13 +2,14 @@
 get '/questions/:id/answers/new' do
    @question = Question.find(params[:id])
 
-  erb :"/answers/show"
+  erb :"/answers/new"
 end
 
 #create answer
 post '/questions/:id/answers' do
   @question = Question.find(params[:id])
-  @answer = @question.answers.find(params[:id])
+  @answer = @question.answers.new(params[:answer])
+  # @question.answers.find(params[:id])
 
   if @answer.save
 			redirect "/questions/#{@question.id}"

@@ -26,6 +26,7 @@ img.banner {
 .nav-li:hover {
     background-color: #111;
 }
+<<<<<<< HEAD
 .logout {
     margin: 0;
     overflow: hidden;
@@ -41,4 +42,42 @@ img.banner {
 }
 .logout:hover {
     background-color: #111;
+=======
+
+.pop {
+  text-align: center;
+}
+.h1 {
+  font-family: 'Sansita', sans-serif;
+}
+input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #ff6600;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #e65c00;
+}
+
+.login {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+>>>>>>> 654c95f9993fbb704320fdc75f301b035eebdc5f
 }
