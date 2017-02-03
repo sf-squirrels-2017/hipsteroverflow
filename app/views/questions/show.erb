@@ -1,7 +1,10 @@
 <h3><%=@question.title%></h3>
 
 <p><%=@question.description%></p>
-
+<form method="post" action="/questions/<%=@question.id%>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete"/>
+</form>
 <h4>Answers:</h4>
 
 <%@answers.each do |answer|%>

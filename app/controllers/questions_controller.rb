@@ -42,6 +42,9 @@ end
 
 delete '/questions/:id' do
   @question = Question.find(params[:id])
+  @votes = Vote.all.each {|vote| vote.votable_id == @question.id}
+  @votes.each {|vote| vote.destroy}
   @question.destroy
+
   redirect '/questions'
 end
