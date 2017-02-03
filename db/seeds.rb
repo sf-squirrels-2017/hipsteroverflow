@@ -19,3 +19,12 @@ end
                   :question_id => rand(1..30),
                  )
 end
+
+
+
+100.times do
+  Vote.create!(user_id: rand(1..10),
+               :votable_type =>'Question',
+               votable_id: rand(2..30))
+
+end
