@@ -1,14 +1,12 @@
 $(document).ready(function() {
   hideForms();
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   showNewQuestionForm();
   showNewAnswerForm();
   createNewQuestion();
   createNewAnswer();
+  increaseVoteCount();
+  decreaseVoteCount();
+
 });
 
 
@@ -22,7 +20,7 @@ var showNewQuestionForm = function(){
     e.preventDefault();
     $('#new_question_form').show()
   })
-}
+};
 
 var showNewAnswerForm = function(){
   $('#new_answer_button').on('submit', function(e){
@@ -44,8 +42,8 @@ var createNewQuestion = function(){
     }).done(function(response){
       $('#question_container').html(response);
     })
-  });
-}
+  })
+};
 
 var createNewAnswer = function(){
   $('#new_answer_form').on('submit', function(e){
@@ -61,4 +59,39 @@ var createNewAnswer = function(){
       $('#answer_container').append(response);
     })
   })
-}
+};
+
+
+var increaseVoteCount = function() {
+  $('.upvote-button').on("submit", function(e){
+    e.preventDefault();
+
+    var button = $(this);
+    var url = $(this).attr('action');
+    var method = $(this).attr('method');
+
+    $.ajax({
+      url: url,
+      method: method
+    }).done(function(response){
+      button.siblings(".votes-count").html(response);
+    })
+  })
+};
+
+var decreaseVoteCount = function() {
+  $('.downvote-button').on("submit", function(e){
+    e.preventDefault();
+
+    var button = $(this);
+    var url = $(this).attr('action')
+    var method = $(this).attr('method')
+
+    $.ajax({
+      url: url,
+      method: method,
+    }).done(function(response){
+      button.siblings(".votes-count").html(response);
+    })
+  })
+};
