@@ -8,7 +8,7 @@ end
 #create answer
 post '/questions/:id/answers' do
   @question = Question.find(params[:id])
-  @answer = @question.answers.new(params[:answer])
+  @answer = @question.answers.create(params[:answer])
   # @question.answers.find(params[:id])
   if request.xhr?
     erb :'answers/_new_answer', layout: false, locals:{
