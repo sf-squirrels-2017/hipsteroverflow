@@ -14,4 +14,13 @@ helpers do
       nil
     end
   end
+
+  def user?
+    if current_user != nil
+       true
+    else
+      false
+    end
+  end
+
 end
