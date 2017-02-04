@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
+  padding: 50px 100px 0px 100px;
 }
+
 .banner {
     display: block;
     margin: 0 auto;
@@ -90,12 +91,12 @@ input[type=submit]:hover {
     background-color: #e65c00;
 }
 
-.login {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
 .question-index {
 
+}
+.form {
+  padding: 25px 50px 35px 50px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }

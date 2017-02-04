@@ -26,6 +26,7 @@ var showNewAnswerForm = function(){
   $('#new_answer_button').on('submit', function(e){
     e.preventDefault();
     $('#new_answer_form').show()
+    $('#new_answer_button').hide()
   });
 };
 
@@ -58,6 +59,11 @@ var createNewAnswer = function(){
     }).done(function(response){
       $('#answer_container').append(response);
     })
+    $('#new_answer_form').children( ':first').val('')
+
+    $('#new_answer_button').show();
+    $('#new_answer_form').hide();
+
   })
 };
 
