@@ -1,10 +1,14 @@
 <h2><%=@question.title%></h2>
 <p>Hipster Approval Numerical: <%=vote_count(@question)%></p>
 <p><%=@question.description%></p>
-<form method="post" action="/questions/<%=@question.id%>">
-  <input type="hidden" name="_method" value="delete">
-  <input class="button" type="submit" value="Delete"/>
-</form>
+
+<%if current_user.id == @question.user_id %>
+  <form method="post" action="/questions/<%=@question.id%>">
+    <input type="hidden" name="_method" value="delete">
+    <input class="button" type="submit" value="Delete"/>
+  </form>
+<% end %>
+
 <h4>Answers:</h4>
 <form id="new_answer_button" action="/questions/<%= @question.id %>/answers/new">
   <input class="button" type="submit" value="New Answer" />
