@@ -1,5 +1,5 @@
 <h2><%=@question.title%></h2>
-<p>Votes: <%=@question.votes.count%></p>
+<p>Hipster Approval Numerical: <%=vote_count(@question)%></p>
 <p><%=@question.description%></p>
 <form method="post" action="/questions/<%=@question.id%>">
   <input type="hidden" name="_method" value="delete">
