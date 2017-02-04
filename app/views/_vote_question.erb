@@ -1,9 +1,9 @@
-<div>
+<div class="vote-container">
   <form class="upvote-button" method="POST" action="/question/<%=question.id%>/upvote">
-    <input type="submit" value="^" />
+    <input class="vote-button" type="submit" value="^" />
   </form>
   <div class="votes-count"> <%= vote_count(question) %> </div>
-  <form class="downvote-button" method="POST" action="/question/<%=question.id%>/downvote">
-    <input type="submit" value="v" />
+  <form class="float downvote-button" method="POST" action="/question/<%=question.id%>/downvote">
+    <input class="vote-button" type="submit" value="v" />
   </form>
 </div>

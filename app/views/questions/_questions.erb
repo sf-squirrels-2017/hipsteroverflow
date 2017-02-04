@@ -1,6 +1,6 @@
 <div>
   <%@questions.each do |question|%>
     <%=erb :"_vote_question", locals: {question: question}%>
-    <p class="question" id="question_<%=question.id%>"><a class="question_link" href='/questions/<%=question.id%>'><%=question.title%></a></p>
+    <p id="question_<%=question.id%>"><a href='/questions/<%=question.id%>'><%=question.title%></a></p>
   <% end %>
 </div>
