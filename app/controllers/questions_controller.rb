@@ -13,7 +13,7 @@ post '/questions' do
   @question = Question.create(params[:question])
   @user = User.find_by(params[:username])
   if request.xhr?
-    erb :'questions/_questions', layout: false, locals:{ questions: @questions }
+    erb :'questions/_questions', layout: false, locals: { questions: @questions }
   else
     if @question.save
       redirect '/questions'
